@@ -49,6 +49,8 @@ namespace Project4 {
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Button^  button4;
+	private: System::Windows::Forms::TextBox^  textBox6;
 
 
 	protected:
@@ -79,6 +81,8 @@ namespace Project4 {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -95,7 +99,7 @@ namespace Project4 {
 			this->textBox2->Location = System::Drawing::Point(42, 232);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(281, 296);
+			this->textBox2->Size = System::Drawing::Size(281, 104);
 			this->textBox2->TabIndex = 3;
 			// 
 			// button2
@@ -140,7 +144,7 @@ namespace Project4 {
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(100, 20);
 			this->textBox4->TabIndex = 8;
-			this->textBox4->Text = L"F+F-F-F+F";
+			this->textBox4->Text = L"FF+F++F+F";
 			// 
 			// textBox5
 			// 
@@ -148,6 +152,7 @@ namespace Project4 {
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(100, 20);
 			this->textBox5->TabIndex = 9;
+			this->textBox5->Text = L"F+F+F+F";
 			// 
 			// label1
 			// 
@@ -195,11 +200,31 @@ namespace Project4 {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(248, 184);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(75, 23);
+			this->button4->TabIndex = 15;
+			this->button4->Text = L"button4";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
+			// 
+			// textBox6
+			// 
+			this->textBox6->Location = System::Drawing::Point(42, 361);
+			this->textBox6->Multiline = true;
+			this->textBox6->Name = L"textBox6";
+			this->textBox6->Size = System::Drawing::Size(281, 108);
+			this->textBox6->TabIndex = 16;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1292, 669);
+			this->Controls->Add(this->textBox6);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
@@ -236,10 +261,10 @@ namespace Project4 {
 
 
 			 int delta = 5;
-			 int x1 = 300, y1 = 300;
+			 int x1 = 500, y1 = 300;
 			 int x2, y2;			 
-			 int base_x = 300;
-			 int base_y = 300;
+			 int base_x = 500;
+			 int base_y = 200;
 		
 			Graphics ^ g;
 	private: System::Void pictureBox1_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -258,11 +283,17 @@ private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs
 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 	g->Clear(SystemColors::Control);
-	x1 = 300;
+	x1 = 500;
 	y1 = 300;
-	base_x = 300;
-    base_y = 300;
+	base_x = 500;
+    base_y = 200;
 	baseangle = 0;
+}
+private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+	
+	g = pictureBox1->CreateGraphics();
+
+
 }
 };
 }

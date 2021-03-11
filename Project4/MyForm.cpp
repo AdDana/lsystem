@@ -117,14 +117,14 @@ void Project4::MyForm::drawtree()
 
 				break;
 			case '+':
-
+				if (baseangle == 360)baseangle = 0;
 				baseangle += 90;
-
+				textBox6->Text += baseangle + " ";
 				break;
 			case '-':
-
+				if (baseangle == -360)baseangle = 0;
 				baseangle -= 90;
-
+				textBox6->Text += baseangle+" ";
 				break;
 			default:
 				break;
